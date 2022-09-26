@@ -5,8 +5,8 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 module.exports = (env, { mode }) => {
   const htmlPlugin = new HtmlWebPackPlugin({
     template: './src/index.html',
-    filename: './index.html'
-   });
+    filename: './index.html',
+  });
 
   return {
     // Configure loaders based on extension.
