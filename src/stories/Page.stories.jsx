@@ -1,7 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { within, userEvent } from '@storybook/testing-library';
 
-import { Page } from './Page';
+import Page from './Page';
 
 export default {
   title: 'Example/Page',
@@ -12,6 +13,7 @@ export default {
   },
 };
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const Template = (args) => <Page {...args} />;
 
 // More on interaction testing: https://storybook.js.org/docs/react/writing-tests/interaction-testing
