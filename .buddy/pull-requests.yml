@@ -104,22 +104,6 @@
       zone_id: ""
       trigger_hours: []
       trigger_days: []
-  - action: "npm run test"
-    type: "BUILD"
-    working_directory: "/buddy/accessibility-patterns"
-    docker_image_name: "library/node"
-    docker_image_tag: "16"
-    execute_commands:
-    - "npm run codegen"
-    - "npm run test"
-    volume_mappings:
-    - "/:/buddy/accessibility-patterns"
-    shell: "BASH"
-    trigger_conditions:
-    - trigger_condition: "ALWAYS"
-      zone_id: ""
-      trigger_hours: []
-      trigger_days: []
   - action: "npm run build"
     type: "BUILD"
     disabled: true
