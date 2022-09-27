@@ -21,9 +21,9 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prestylelint": "check-node-version --package",
-    "stylelint": "stylelint \"**/*.scss\"",
+    "stylelint": "stylelint \"**/*.(s)?css\"",
     "prestylelint:fix": "check-node-version --package",
-    "stylelint:fix": "stylelint --fix \"**/*.scss\""
+    "stylelint:fix": "stylelint --fix \"**/*.(s)?css\""
   },
   "dependencies": {
     "prop-types": "^15.8.1",
