@@ -50,13 +50,9 @@
     - "if [[ -f package.json ]]; then npm audit --audit-level=high --production --cache /buddy/accessibility-patterns/.npm; fi"
     volume_mappings:
     - "/:/buddy/accessibility-patterns"
-    ignore_errors: true
+    ignore_errors: false
     shell: "BASH"
-    trigger_conditions:
-    - trigger_condition: "DAY"
-      zone_id: "America/New_York"
-      trigger_days:
-      - 4
+    trigger_condition: "ALWAYS"
     execute_every_command: true
   - action: "npm ci"
     type: "BUILD"
