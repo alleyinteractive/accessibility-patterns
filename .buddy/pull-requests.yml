@@ -1,0 +1,86 @@
+- pipeline: "Pull Request Tests"
+  trigger_mode: "ON_EVERY_PUSH"
+  ref_name: "refs/pull/*"
+  ref_type: "WILDCARD"
+  priority: "NORMAL"
+  fetch_all_refs: true
+  fail_on_prepare_env_warning: true
+  trigger_condition: "ALWAYS"
+  actions:
+    - action: "Gitignored files check"
+      type: "BUILD"
+      working_directory: "/buddy/accessibility-patterns"
+      docker_image_name: "library/node"
+      docker_image_tag: "16"
+      execute_commands:
+        - "if [[ ! -z $(git ls-files -i --exclude-standard) ]]; then exit 1; fi"
+      volume_mappings:
+        - "/:/buddy/accessibility-patterns"
+      trigger_condition: "ALWAYS"
+      shell: "BASH"
+    - action: "Check for git conflicts"
+      type: "BUILD"
+      working_directory: "/buddy/accessibility-patterns"
+      docker_image_name: "library/node"
+      docker_image_tag: "16"
+      execute_commands:
+        - "! git grep -E '<<<<<<< |>>>>>>> ' -- './*' ':(exclude)*/buddy.yml' ':(exclude).buddy/*'"
+      volume_mappings:
+        - "/:/buddy/accessibility-patterns"
+      trigger_condition: "ALWAYS"
+      shell: "BASH"
+    - action: "npm audit"
+      type: "BUILD"
+      working_directory: "/buddy/accessibility-patterns"
+      docker_image_name: "library/node"
+      docker_image_tag: "16"
+      execute_commands:
+        - "if [[ -f package.json ]]; then npm audit --audit-level=high --production --cache /buddy/accessibility-patterns/.npm; fi"
+      volume_mappings:
+        - "/:/buddy/accessibility-patterns"
+      trigger_condition: "ALWAYS"
+      shell: "BASH"
+    - action: "npm ci"
+      type: "BUILD"
+      working_directory: "/buddy/accessibility-patterns"
+      docker_image_name: "library/node"
+      docker_image_tag: "16"
+      execute_commands:
+        - "npm ci --cache /buddy/accessibility-patterns/.npm"
+      volume_mappings:
+        - "/:/buddy/accessibility-patterns"
+      trigger_condition: "ALWAYS"
+      shell: "BASH"
+    - action: "npm run lint"
+      type: "BUILD"
+      working_directory: "/buddy/accessibility-patterns"
+      docker_image_name: "library/node"
+      docker_image_tag: "16"
+      execute_commands:
+        - "npm run lint"
+      volume_mappings:
+        - "/:/buddy/accessibility-patterns"
+      trigger_condition: "ALWAYS"
+      shell: "BASH"
+    - action: "npm run stylelint"
+      type: "BUILD"
+      working_directory: "/buddy/accessibility-patterns"
+      docker_image_name: "library/node"
+      docker_image_tag: "16"
+      execute_commands:
+        - "npm run stylelint"
+      volume_mappings:
+        - "/:/buddy/accessibility-patterns"
+      trigger_condition: "ALWAYS"
+      shell: "BASH"
+    - action: "npm run build"
+      type: "BUILD"
+      working_directory: "/buddy/accessibility-patterns"
+      docker_image_name: "library/node"
+      docker_image_tag: "16"
+      execute_commands:
+        - "npm run build"
+      volume_mappings:
+        - "/:/buddy/accessibility-patterns"
+      trigger_condition: "ALWAYS"
+      shell: "BASH"
