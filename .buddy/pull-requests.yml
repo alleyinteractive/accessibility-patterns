@@ -84,3 +84,14 @@
         - "/:/buddy/accessibility-patterns"
       trigger_condition: "ALWAYS"
       shell: "BASH"
+    - action: "npm run build-storybook"
+      type: "BUILD"
+      working_directory: "/buddy/accessibility-patterns"
+      docker_image_name: "library/node"
+      docker_image_tag: "16"
+      execute_commands:
+        - "npm run build-storybook"
+      volume_mappings:
+        - "/:/buddy/accessibility-patterns"
+      trigger_condition: "ALWAYS"
+      shell: "BASH"

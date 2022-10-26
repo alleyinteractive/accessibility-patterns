@@ -3,6 +3,7 @@ build
 bower_components
 node_modules
 vendor
+storybook-static
 
 # Log files
 *.log

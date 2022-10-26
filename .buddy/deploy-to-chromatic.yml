@@ -1,0 +1,32 @@
+- pipeline: "Deploy to Chromatic"
+  on: "EVENT"
+  events:
+  - type: "PUSH"
+    refs:
+    - "refs/heads/main"
+  priority: "NORMAL"
+  fail_on_prepare_env_warning: true
+  resources: "DEFAULT"
+  actions:
+  - action: "npm ci"
+      type: "BUILD"
+      working_directory: "/buddy/accessibility-patterns"
+      docker_image_name: "library/node"
+      docker_image_tag: "16"
+      execute_commands:
+        - "npm ci --cache /buddy/accessibility-patterns/.npm"
+      volume_mappings:
+        - "/:/buddy/accessibility-patterns"
+      trigger_condition: "ALWAYS"
+      shell: "BASH"
+   - action: "npm run chromatic"
+      type: "BUILD"
+      working_directory: "/buddy/accessibility-patterns"
+      docker_image_name: "library/node"
+      docker_image_tag: "16"
+      execute_commands:
+        - "npm run chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}"
+      volume_mappings:
+        - "/:/buddy/accessibility-patterns"
+      trigger_condition: "ALWAYS"
+      shell: "BASH"

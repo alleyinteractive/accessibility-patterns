@@ -10,6 +10,7 @@
   "scripts": {
     "prebuild": "check-node-version --package",
     "build": "webpack --mode=production",
+    "chromatic": "npx chromatic --exit-zero-on-changes",
     "predev": "check-node-version --package",
     "dev": "webpack serve --mode development",
     "prelint": "check-node-version --package",
@@ -46,6 +47,7 @@
     "autoprefixer": "^10.4.12",
     "babel-loader": "^8.2.5",
     "check-node-version": "^4.2.1",
+    "chromatic": "^6.11.0",
     "css-loader": "^6.7.1",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
