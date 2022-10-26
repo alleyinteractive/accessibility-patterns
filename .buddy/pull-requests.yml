@@ -106,7 +106,7 @@
       docker_image_name: "library/node"
       docker_image_tag: "16"
       execute_commands:
-        - "npm run chromatic --project-token ${CHROMATIC_PROJECT_TOKEN} --branch-name develop --ci --exit-zero-on-changes --d storybook-static --dry-run"
+        - "npx chromatic --project-token ${CHROMATIC_PROJECT_TOKEN} --branch-name develop --ci --exit-zero-on-changes --debug --dry-run"
       volume_mappings:
         - "/:/buddy/accessibility-patterns"
       trigger_condition: "ALWAYS"
