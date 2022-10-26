@@ -10,7 +10,7 @@
   "scripts": {
     "prebuild": "check-node-version --package",
     "build": "webpack --mode=production",
-    "chromatic": "npx chromatic --exit-zero-on-changes",
+    "chromatic": "chromatic",
     "predev": "check-node-version --package",
     "dev": "webpack serve --mode development",
     "prelint": "check-node-version --package",
@@ -61,6 +61,7 @@
     "postcss-loader": "^7.0.1",
     "resolve-url-loader": "^5.0.0",
     "sass-loader": "^13.0.2",
+    "storybook-addon-turbo-build": "^1.1.0",
     "style-loader": "^3.3.1",
     "stylelint": "^14.12.1",
     "stylelint-config-sass-guidelines": "^9.0.1",
