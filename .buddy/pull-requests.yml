@@ -84,13 +84,13 @@
         - "/:/buddy/accessibility-patterns"
       trigger_condition: "ALWAYS"
       shell: "BASH"
-    - action: "npm run build-storybook"
+    - action: "npm run chromatic --dry-run"
       type: "BUILD"
       working_directory: "/buddy/accessibility-patterns"
       docker_image_name: "library/node"
       docker_image_tag: "16"
       execute_commands:
-        - "npm run build-storybook"
+        - "npm run chromatic -- --project-token ${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes --ci --dry-run"
       volume_mappings:
         - "/:/buddy/accessibility-patterns"
       trigger_condition: "ALWAYS"
