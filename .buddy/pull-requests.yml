@@ -90,11 +90,23 @@
       shell: "BASH"
     - action: "npm run build-storybook"
       type: "BUILD"
+      disabled: true
       working_directory: "/buddy/accessibility-patterns"
       docker_image_name: "library/node"
       docker_image_tag: "16"
       execute_commands:
-        - "npm run build-storybook -- --loglevel silly --debug-webpack"
+        - "npm run build-storybook"
+      volume_mappings:
+        - "/:/buddy/accessibility-patterns"
+      trigger_condition: "ALWAYS"
+      shell: "BASH"
+    - action: "Publish to Chromatic --dry-run"
+      type: "BUILD"
+      working_directory: "/buddy/accessibility-patterns"
+      docker_image_name: "library/node"
+      docker_image_tag: "16"
+      execute_commands:
+        - "npx chromatic --project-token ${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes --ci --dry-run"
       volume_mappings:
         - "/:/buddy/accessibility-patterns"
       trigger_condition: "ALWAYS"
