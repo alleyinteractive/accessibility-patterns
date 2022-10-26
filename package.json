@@ -10,7 +10,7 @@
   "scripts": {
     "prebuild": "check-node-version --package",
     "build": "webpack --mode=production",
-    "chromatic": "npx chromatic --exit-zero-on-changes",
+    "chromatic": "chromatic",
     "predev": "check-node-version --package",
     "dev": "webpack serve --mode development",
     "prelint": "check-node-version --package",
