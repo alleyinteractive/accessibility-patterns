@@ -31,6 +31,7 @@
       shell: "BASH"
     - action: "npm audit"
       type: "BUILD"
+      disabled: true
       working_directory: "/buddy/accessibility-patterns"
       docker_image_name: "library/node"
       docker_image_tag: "16"
@@ -53,6 +54,7 @@
       shell: "BASH"
     - action: "npm run lint"
       type: "BUILD"
+      disabled: true
       working_directory: "/buddy/accessibility-patterns"
       docker_image_name: "library/node"
       docker_image_tag: "16"
@@ -64,6 +66,7 @@
       shell: "BASH"
     - action: "npm run stylelint"
       type: "BUILD"
+      disabled: true
       working_directory: "/buddy/accessibility-patterns"
       docker_image_name: "library/node"
       docker_image_tag: "16"
@@ -75,6 +78,7 @@
       shell: "BASH"
     - action: "npm run build"
       type: "BUILD"
+      disabled: true
       working_directory: "/buddy/accessibility-patterns"
       docker_image_name: "library/node"
       docker_image_tag: "16"
@@ -86,6 +90,7 @@
       shell: "BASH"
     - action: "npm run build-storybook"
       type: "BUILD"
+      disabled: true
       working_directory: "/buddy/accessibility-patterns"
       docker_image_name: "library/node"
       docker_image_tag: "16"
