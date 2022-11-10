@@ -36,7 +36,10 @@ We use these attributes to connect the heading button to the accordion content.
 
 ## Accordion content
 
+The accordion content could contain any valid markup, but should be hidden from the user, both visually and programmatically, until the accordion is opened. To hide the content programmatically, `visibility: hidden` is applied. This prevents a screen reader from being able to navigate to any of the content.
+
 ### Content Attributes
 
 - `id`: A unique ID
 - `aria-labelledby`: The ID of the accordion heading button.
+- `role="region"`: This attribute groups the accordion content.
