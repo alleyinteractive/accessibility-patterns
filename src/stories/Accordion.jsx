@@ -53,7 +53,7 @@ const Accordion = ({
       />
     </div>
   );
-}
+};
 
 Accordion.propTypes = {
   /**
