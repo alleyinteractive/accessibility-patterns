@@ -1,0 +1,42 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Accordion from './Accordion';
+
+<Meta title="Example/Accordion" component={Accordion} />
+
+export const Template = (args) => <Accordion {...args} />;
+
+# Accordion
+
+An accordion is a pairing of a heading and related content below it. Without the functionality of the accordion, the heading and content should still make sense as a pair. For accessiblity, this is how we should think about how to write the markup and functionality for an accordion.
+
+<Canvas>
+  <Story 
+    name="Default"
+    args={{ 
+      heading: 'Accordion Heading',
+      headingLevel: 2,
+      content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis vestibulum ex, ut hendrerit massa pharetra ut. Nunc et lacinia nulla, sollicitudin laoreet quam. Sed sodales ex ligula. Mauris in sagittis mauris. Morbi ac dapibus leo, non suscipit tellus. Nam ornare fermentum odio, vel lacinia arcu. Sed auctor lobortis felis, vel molestie risus interdum maximus. Aliquam gravida cursus mollis. Sed tempor urna ac justo efficitur, eget tempor turpis facilisis. Ut euismod elit quis lectus lobortis, ut semper metus finibus. Vivamus ut sapien ornare sem placerat tincidunt eget ut mauris. Phasellus tincidunt ipsum ac fringilla malesuada. Aliquam dictum lectus nec ex aliquet auctor.</p>',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Accordion Heading
+
+In order to make a heading element clickable, a button element is wrapped around its text content. This button makes the heading focusable and allows communication of the current state of the accordion (open or closed).
+
+### Button Attributes
+
+We use these attributes to connect the heading button to the accordion content.
+
+- `id`: A unique ID
+- `aria-expanded`: Either true or false, update when the user opens or closes the accordion.
+- `aria-controls`: The ID of the accordion content element.
+
+## Accordion content
+
+### Content Attributes
+
+- `id`: A unique ID
+- `aria-labelledby`: The ID of the accordion heading button.

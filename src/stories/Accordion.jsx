@@ -57,17 +57,17 @@ const Accordion = ({
 
 Accordion.propTypes = {
   /**
-   * Button contents
+   * HTML content of accordion
    */
   content: PropTypes.string,
   /**
-   * What background color to use
+   * Text for accordion heading/toggle button
    */
   heading: PropTypes.string,
   /**
-   * What background color to use
+   * Which heading level to use for accordion heading
    */
-  headingLevel: PropTypes.oneOf(2, 3, 4, 5, 6),
+  headingLevel: PropTypes.oneOf([2, 3, 4, 5, 6]),
 };
 
 Accordion.defaultProps = {
