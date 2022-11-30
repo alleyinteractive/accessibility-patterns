@@ -1,0 +1,102 @@
+.storybook-accordion {
+  border-bottom: 2px solid #e4e4e4;
+
+  &:last-of-type:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .accordion-heading {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: sans-serif;
+      font-size: 1.25rem;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    button {
+      background: none;
+      border: 0;
+      color: inherit;
+      cursor: pointer;
+      display: block;
+      font-size: inherit;
+      padding: 1.5rem 3.56rem 1.5rem 1.75rem;
+      position: relative;
+      text-align: left;
+      width: 100%;
+
+      &::before {
+        background: url('assets/accordion-chevron.svg') no-repeat;
+        background-size: contain;
+        content: '';
+        height: 0.875rem;
+        position: absolute;
+        right: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1.25rem;
+
+        @media print {
+          background: none;
+        }
+      }
+
+      @media print {
+        padding: 1.75rem 1.75rem 0.875rem;
+      }
+    }
+  }
+
+  .accordion-content {
+    font-family: sans-serif;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    
+    @media (prefers-reduced-motion: no-preference) {
+      opacity: 0;
+      transform: translateY(-2rem);
+      transition: opacity 0.5s cubic-bezier(0.2, 1, 0.3, 1), visibility 0s 0.5s, transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    > * {
+      padding-left: 1.75rem;
+      padding-right: 1.75rem;
+
+      &:last-child {
+        margin-bottom: 1.75rem;
+      }
+    }
+
+    // Display accordion content when printed.
+    @media print {
+      height: auto;
+      opacity: 1;
+      overflow: visible;
+      transform: none;
+      visibility: visible;
+    }
+  }
+
+  &.is-open {
+    .accordion-heading button::before {
+      transform: translateY(-50%) rotate(-180deg);
+    }
+
+    .accordion-content {
+      height: auto;
+      overflow: visible;
+      visibility: visible;
+
+      @media (prefers-reduced-motion: no-preference) {
+        opacity: 1;
+        transform: none;
+        transition: opacity 0.5s cubic-bezier(0.2, 1, 0.3, 1), transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+      }
+    }
+  }
+}
