@@ -10,6 +10,36 @@ export const Template = (args) => <Accordion {...args} />;
 
 An accordion is a pairing of a heading and related content below it. Without the functionality of the accordion, the heading and content should still make sense as a pair. For accessiblity, this is how we should think about how to write the markup and functionality for an accordion.
 
+## Best Practices
+
+### Accordion Heading
+
+The accordion heading should fit in the structure of the page, so it's important to give the editor the ability to change the heading level when inserting an accordion. A heading level 2 is a sensible default.
+
+In order to make a heading element clickable, a button element is wrapped around its text content. This button makes the heading focusable and allows communication of the current state of the accordion (open or closed).
+
+#### Button Attributes
+
+These attributes connect the heading button to the accordion content.
+
+- `id`: A unique ID
+- `aria-expanded`: Either true or false, update when the user opens or closes the accordion.
+- `aria-controls`: The ID of the accordion content element.
+
+### Accordion content
+
+To hide the content programmatically, `visibility: hidden` is used. This prevents a screen reader from being able to navigate to any of the content when the accordion is closed.
+
+#### Content Attributes
+
+These attributes connect the heading content to the accordion button.
+
+- `id`: A unique ID
+- `aria-labelledby`: The ID of the accordion heading button.
+- `role="region"`: This attribute groups the accordion content.
+
+## Example
+
 <Canvas>
   <Story 
     name="Accordion"
@@ -21,27 +51,3 @@ An accordion is a pairing of a heading and related content below it. Without the
     {Template.bind({})}
   </Story>
 </Canvas>
-
-## Accordion Heading
-
-The accordion heading should fit in the structure of the page, so it's important to give the editor the ability to change the heading level when inserting an accordion. A heading level 2 is a sensible default.
-
-In order to make a heading element clickable, a button element is wrapped around its text content. This button makes the heading focusable and allows communication of the current state of the accordion (open or closed).
-
-### Button Attributes
-
-We use these attributes to connect the heading button to the accordion content.
-
-- `id`: A unique ID
-- `aria-expanded`: Either true or false, update when the user opens or closes the accordion.
-- `aria-controls`: The ID of the accordion content element.
-
-## Accordion content
-
-The accordion content could contain any valid markup, but should be hidden from the user, both visually and programmatically, until the accordion is opened. To hide the content programmatically, `visibility: hidden` is applied. This prevents a screen reader from being able to navigate to any of the content.
-
-### Content Attributes
-
-- `id`: A unique ID
-- `aria-labelledby`: The ID of the accordion heading button.
-- `role="region"`: This attribute groups the accordion content.
