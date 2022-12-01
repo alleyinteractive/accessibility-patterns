@@ -11,7 +11,7 @@
       type: "BUILD"
       working_directory: "/buddy/accessibility-patterns"
       docker_image_name: "library/node"
-      docker_image_tag: "16"
+      docker_image_tag: "18"
       execute_commands:
         - "npm ci --cache /buddy/accessibility-patterns/.npm"
       volume_mappings:
@@ -22,7 +22,7 @@
       type: "BUILD"
       working_directory: "/buddy/accessibility-patterns"
       docker_image_name: "library/node"
-      docker_image_tag: "16"
+      docker_image_tag: "18"
       execute_commands:
         - "npm run chromatic -- --project-token ${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes --ci"
       volume_mappings:
