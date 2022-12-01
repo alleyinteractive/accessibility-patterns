@@ -9,6 +9,7 @@ module.exports = {
     '@storybook/addon-interactions',
     'storybook-addon-turbo-build',
     '@storybook/preset-scss',
+    '@storybook/addon-a11y',
   ],
   framework: '@storybook/react',
   core: {
