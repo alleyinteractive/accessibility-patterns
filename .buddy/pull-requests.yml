@@ -11,7 +11,7 @@
       type: "BUILD"
       working_directory: "/buddy/accessibility-patterns"
       docker_image_name: "library/node"
-      docker_image_tag: "16"
+      docker_image_tag: "18"
       execute_commands:
         - "if [[ ! -z $(git ls-files -i --exclude-standard) ]]; then exit 1; fi"
       volume_mappings:
@@ -22,7 +22,7 @@
       type: "BUILD"
       working_directory: "/buddy/accessibility-patterns"
       docker_image_name: "library/node"
-      docker_image_tag: "16"
+      docker_image_tag: "18"
       execute_commands:
         - "! git grep -E '<<<<<<< |>>>>>>> ' -- './*' ':(exclude)*/buddy.yml' ':(exclude).buddy/*'"
       volume_mappings:
@@ -33,7 +33,7 @@
       type: "BUILD"
       working_directory: "/buddy/accessibility-patterns"
       docker_image_name: "library/node"
-      docker_image_tag: "16"
+      docker_image_tag: "18"
       execute_commands:
         - "if [[ -f package.json ]]; then npm audit --audit-level=high --production --cache /buddy/accessibility-patterns/.npm; fi"
       volume_mappings:
@@ -44,7 +44,7 @@
       type: "BUILD"
       working_directory: "/buddy/accessibility-patterns"
       docker_image_name: "library/node"
-      docker_image_tag: "16"
+      docker_image_tag: "18"
       execute_commands:
         - "npm ci --cache /buddy/accessibility-patterns/.npm"
       volume_mappings:
@@ -55,7 +55,7 @@
       type: "BUILD"
       working_directory: "/buddy/accessibility-patterns"
       docker_image_name: "library/node"
-      docker_image_tag: "16"
+      docker_image_tag: "18"
       execute_commands:
         - "npm run lint"
       volume_mappings:
@@ -66,7 +66,7 @@
       type: "BUILD"
       working_directory: "/buddy/accessibility-patterns"
       docker_image_name: "library/node"
-      docker_image_tag: "16"
+      docker_image_tag: "18"
       execute_commands:
         - "npm run stylelint"
       volume_mappings:
@@ -77,7 +77,7 @@
       type: "BUILD"
       working_directory: "/buddy/accessibility-patterns"
       docker_image_name: "library/node"
-      docker_image_tag: "16"
+      docker_image_tag: "18"
       execute_commands:
         - "npm run build"
       volume_mappings:
@@ -88,7 +88,7 @@
       type: "BUILD"
       working_directory: "/buddy/accessibility-patterns"
       docker_image_name: "library/node"
-      docker_image_tag: "16"
+      docker_image_tag: "18"
       execute_commands:
         - "npm run chromatic -- --project-token ${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes --ci --dry-run"
       volume_mappings:
