@@ -43,7 +43,7 @@ All changes are based off `main` and committed to feature branches according to 
 
 ### Contributing
 
-Link to the `CONTRIBUTING.md` here if applicable. If your hosted project includes client developer collaboration, you should define the workflow here. If there are intricacies about ticket creation or management (eg. via Jira or Athena), you may indicate that here.
+To contribute to this project, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 
 ## Deployment
@@ -52,12 +52,11 @@ Once a PR is merged into `main`, Buddy will kick off a deployment to Chromatic. 
 
 ## Project Structure
 
-Here, provide an overview of the project structure and link to internal READMEs (eg. for a theme, plugin, framework, related project, etc.) or wikis the team has setup that provide more detailed or nuanced project architecture. Avoid linking to alternate-permissions constrained sources (eg. to a Google Doc) unless project or client concerns mandate it.
-
-If the project is intricate, consider including graphics. If you assume structural conventions, state them here, eg:
-
-- We store code we don't want to deploy in `/no-deploy`
-- We manage all third-party plugins via composer dependencies
+- All patterns are based on components in the `src/components` directory. Each component should contain:
+    - The main `Component.jsx` file
+    - A `component.scss` stylesheet to style the component (if necessary)
+    - A `component.stories.mdx` file that creates and documents the pattern in Storybook
+- Storybook configuration files are in the `.storybook` directory.
 
 
 ## Third-Party Dependencies
