@@ -24,7 +24,7 @@ Use Google Lighthouse and the SiteImprove Accessibility Checker Chrome extension
 Conduct manual testing via keyboard and screen reader (desktop and mobile) to ensure the component is accessible and user-friendly.
 
 ### Tips
-This Storybook includes the a11y addon that adds an "Accessibilty" tab to each component's canvas and performs automated accessibility testing. Use this to ensure there are no violations.
+This Storybook includes the [a11y addon](https://storybook.js.org/addons/@storybook/addon-a11y) that adds an "Accessibility" tab to each component's canvas and performs automated accessibility testing. Use this to ensure there are no violations.
 
 ![a11y addon](./src/assets/a11y-addon.png)
 
