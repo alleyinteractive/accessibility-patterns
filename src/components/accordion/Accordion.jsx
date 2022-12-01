@@ -47,6 +47,7 @@ const Accordion = ({
       <div
         aria-labelledby="accordion-button-1"
         className="accordion-content"
+        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: content }}
         id="accordion-content-1"
         role="region"

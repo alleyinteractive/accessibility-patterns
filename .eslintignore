@@ -7,3 +7,6 @@ storybook-static
 
 # Log files
 *.log
+
+# Lint storybook files.
+!.storybook
