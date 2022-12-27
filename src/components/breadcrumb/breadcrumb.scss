@@ -1,0 +1,19 @@
+.storybook-breadcrumb {
+  ol {
+    display: inline-flex;
+    list-style-type: none;
+    padding-left: 0;
+
+    li:not(:last-child) {
+      &:after {
+        content: "|";
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+      }
+    }
+
+    a[aria-current="page"] {
+      font-weight: bold;
+    }
+  }
+}
