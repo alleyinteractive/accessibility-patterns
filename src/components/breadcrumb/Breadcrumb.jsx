@@ -9,7 +9,7 @@ const Breadcrumb = ({
   items,
 }) => (
   <nav aria-label="breadcrumb" className="storybook-breadcrumb">
-    <h2 id="accordion-heading" class="screen-reader-text">Breadcrumb</h2>
+    <h2 id="accordion-heading" className="screen-reader-text">Breadcrumb Navigation</h2>
     <ol aria-labelledby="accordion-heading">
       {items.map(({ title, url }, index) => (
         <li key={title}><a href={url} aria-current={items.length === index + 1 ? 'page' : null}>{title}</a></li>
