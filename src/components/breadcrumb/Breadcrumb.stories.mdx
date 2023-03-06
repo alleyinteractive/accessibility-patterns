@@ -1,0 +1,42 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Breadcrumb from './Breadcrumb'
+
+<Meta title="Components/Breadcrumb" component={Breadcrumb} />
+
+export const Template = (args) => <Breadcrumb {...args} />;
+
+# Breadcrumb
+
+A "breadcrumb trail" consists of a list of links to the parent pages of the current page in hierarchical order. It helps users find their place within a website or web application. [Source](https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/)
+
+## Best Practices
+- Use `<nav>` element to represent the breadcrumb navigation area which implicitly includes `role="navigation"` on the element.
+- Use `<ol>` element to represent the breadcrumb list which appears in ascending hierarchical order.
+- Use `<a aria-current="page">` for the breadcrumb link that indicates the current page. This should always appear last in the list.
+- Use CSS to accomplish visual separators between links rather than markup, so they aren't announced by screen readers.
+
+## Example
+
+<Canvas>
+	<Story
+		name="Breadcrumb"
+		args={{
+			items: [
+				{
+					title: 'Home',
+					url: '#'
+				},
+				{
+					title: 'Category',
+					url: '#'
+				},
+				{
+					title: 'Current Page',
+					url: '#'
+				}
+			]
+		}}>
+		{Template.bind({})}
+	</Story>
+</Canvas>
