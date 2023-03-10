@@ -10,6 +10,14 @@ module.exports = {
     'storybook-addon-turbo-build',
     '@storybook/preset-scss',
     '@storybook/addon-a11y',
+    {
+      name: '@storybook/addon-styling',
+      options: {
+        // Check out https://github.com/storybookjs/addon-styling/blob/main/docs/api.md
+        // For more details on this addon's options.
+        postCss: true,
+      },
+    },
   ],
   framework: '@storybook/react',
   core: {

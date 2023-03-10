@@ -1,0 +1,42 @@
+@use './core/a11y';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: theme('colors.primary');
+  }
+
+  body,
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+  
+  svg {
+    display: block;
+    pointer-events: none;
+  }
+  
+  abbr {
+    border-bottom: 1px dotted currentColor;
+    cursor: help;
+    text-decoration: none;
+  }
+}
+
+@layer utilities {
+  /**
+  * Visually-hidden text.
+  */
+  .screen-reader-text {
+    @include a11y.screen-reader-only;
+  }
+}

@@ -1,0 +1,8 @@
+// Layout-related mixins go here.
+
+/**
+ * Centered block.
+ */
+@mixin auto-margins {
+  margin-inline: auto;
+}
