@@ -5,7 +5,7 @@
   "main": "index.js",
   "engines": {
     "node": "18",
-    "npm": "8"
+    "npm": "9"
   },
   "scripts": {
     "prebuild": "check-node-version --package",
