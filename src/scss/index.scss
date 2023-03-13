@@ -1,0 +1,38 @@
+@use '@/scss/core/a11y';
+@use '@/scss/core/fonts';
+
+@import 'reset';
+
+body,
+html {
+  @include fonts.font-sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+svg {
+  display: block;
+  pointer-events: none;
+}
+
+abbr {
+  border-bottom: 1px dotted currentColor;
+  cursor: help;
+  text-decoration: none;
+}
+
+/**
+ * Generic content-width container.
+ */
+.screen-reader-text {
+  @include a11y.screen-reader-only;
+}
+
+.skip-link {
+  @include a11y.skip-link;
+}

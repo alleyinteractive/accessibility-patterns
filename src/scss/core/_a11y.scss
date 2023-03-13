@@ -1,0 +1,79 @@
+@use '@/scss/core/layout';
+
+/**
+ * Visually hide an element and leave it only for screenreaders
+ */
+@mixin screen-reader-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/**
+ * Adds focus ring outline.
+ * https://remysharp.com/til/css/focus-ring-default-styles
+ */
+@mixin focus-ring {
+  outline: 5px auto Highlight;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+/**
+ * Apply a non-standard focus styles, with a outline that ensures a visible
+ * focus state in Windows high contrast mode.
+ */
+@mixin override-focus-styles {
+  @content;
+  outline: 1px solid transparent;
+}
+
+/**
+ * Remove hover and focus underline for a given link.
+ */
+@mixin remove-helpful-link-decoration {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+/**
+ * Sets initial styles for the 'Skip to content' link; hidden until it has focus.
+ */
+@mixin skip-link {
+  @include layout.auto-margins;
+  background-color: #fff;
+  color: inherit;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: rem(10);
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-decoration: none;
+  top: 0;
+  transform: translateY(-100%);
+  width: max-content;
+  z-index: -1;
+
+  &:focus {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 2147483647; // Theoretical max.
+  }
+}
+
+/**
+ * Media query helper for reduced-motion preference.
+ */
+@mixin respect-reduced-motion {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}

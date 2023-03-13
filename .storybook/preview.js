@@ -1,3 +1,6 @@
+// Global styles.
+import '@/scss/index.scss';
+
 const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {

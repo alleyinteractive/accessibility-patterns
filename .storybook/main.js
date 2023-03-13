@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   stories: [
     '../src/**/*.stories.mdx',
@@ -13,6 +15,19 @@ module.exports = {
   ],
   framework: '@storybook/react',
   core: {
-    builder: '@storybook/builder-webpack5',
+    builder: 'webpack5',
+    options: {
+      lazyCompilation: true,
+    },
+  },
+  webpackFinal: async (config) => {
+    // Hook up aliases.
+    // eslint-disable-next-line no-param-reassign
+    config.resolve.alias = {
+      '@': path.resolve(__dirname, '../src'),
+    };
+
+    // Return the altered config
+    return config;
   },
 };
