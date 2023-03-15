@@ -1,0 +1,26 @@
+$font-mono: Courier, monospace;
+$font-sans-serif: sans-serif;
+
+// Font-weights
+$font-weights: (
+  regular: 300,
+  bold: 700,
+);
+
+// Shortcuts for font-weights.
+$weight-regular: ai-get-font-weight(regular);
+$weight-bold: ai-get-font-weight(bold);
+
+/**
+ * Monospace font styles.
+ */
+@mixin font-mono {
+  font: $weight-regular 90% / 1.6 $font-mono;
+}
+
+/**
+ * Sans-Serif font styles.
+ */
+@mixin font-sans-serif {
+  font-family: $font-sans-serif;
+}
