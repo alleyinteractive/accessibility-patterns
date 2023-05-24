@@ -1,0 +1,49 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Pagination from './Pagination'
+
+<Meta title="Components/Pagination" component={Pagination} />
+
+export const Template = (args) => <Pagination {...args} />;
+
+# Pagination
+
+TODO: Description of Pagination
+
+## Best Practices
+- TODO
+- TODO
+- TODO
+
+## Example
+
+<Canvas>
+	<Story
+		name="Pagination"
+		args={{
+			urls: [
+				{
+					url: '/page1',
+					pageNumber: 1
+				},
+				{
+					url: '/page2',
+					pageNumber: 2
+				},
+				{
+					url: '/page3',
+					pageNumber: 3
+				},
+				{
+					url: '/page4',
+					pageNumber: 4
+				},
+				{
+					url: '/page5',
+					pageNumber: 5
+				}
+			]
+		}}>
+		{Template.bind({})}
+	</Story>
+</Canvas>
