@@ -11,11 +11,13 @@ const Pagination = ({ urls }) => {
   const onLastPage = activePage === urls.length;
 
   const handlePageChange = (e, page) => {
+    // Using preventDefault to mimic pagination functionality without navigating to the href.
     e.preventDefault();
     setActivePage(page);
   };
 
   const handlePageForward = (e) => {
+    // Using preventDefault to mimic pagination functionality without navigating to the href.
     e.preventDefault();
     if (activePage !== urls.length) {
       setActivePage(activePage + 1);
@@ -23,6 +25,7 @@ const Pagination = ({ urls }) => {
   };
 
   const handlePageBack = (e) => {
+    // Using preventDefault to mimic pagination functionality without navigating to the href.
     e.preventDefault();
     if (activePage !== 1) {
       setActivePage(activePage - 1);
