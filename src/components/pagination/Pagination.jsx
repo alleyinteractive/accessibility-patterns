@@ -48,8 +48,10 @@ const Pagination = ({ urls }) => {
             </svg>
           </a>
         </li>
+        {/* Render our URLs as <li> elements containing <a> tags. */}
         {urls.length ? urls.map((url) => {
           const isActive = activePage === url.pageNumber;
+          // Generate the attributes for each <a>.
           const anchorProps = {
             onClick: (e) => handlePageChange(e, url.pageNumber),
             href: url.url,
