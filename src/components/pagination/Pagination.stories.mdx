@@ -11,9 +11,12 @@ export const Template = (args) => <Pagination {...args} />;
 TODO: Description of Pagination
 
 ## Best Practices
-- TODO
-- TODO
-- TODO
+- Use `<nav>` element in addition to `aria-label="pagination"` to differentiate from site navigation.
+- Use `<ol>` element to represent the pagination list in ascending order.
+- Use `aria-current="page"` for the pagination link that indicates the current page.
+- Use `aria-label="page <page number>` on the current page for additional context.
+- Use a visually hidden `<span>` containing text indicating the current page for screen readers.
+- Use `aria-hidden="true"` on any disabled links.
 
 ## Example
 
