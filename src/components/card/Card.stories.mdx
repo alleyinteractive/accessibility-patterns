@@ -14,19 +14,19 @@ A card is a pairing of a heading and related content. Without the visual display
 
 ### Card Heading
 
-The accordion heading should fit in the structure of the page, so it's important to give an editor the ability to change the heading level when inserting a card. A heading level 2 is a sensible default.
+The card heading should fit in the structure and hierarchy of the page, so it's important to give an editor the ability to change the heading level when inserting a card. A heading level 2 is a sensible default. The style of the heading can remain consistent by using a shared class name.
 
 The heading should always come first in the markup. For instances where elements visually appear above or before the heading, use CSS to reorder them. In this card example, the image and category appear before the heading, but are after it in the markup.
 
 ### Card Image
 
-An image can be either content or decorative when used in a card. The image is likely to be decorative when the card is a small preview of a full page of content, where the user can get more information. When it is content, it should have a descriptive alt text attribute. When it is decorative, the alt text attribute should be empty, like `alt=""`.
+An image can be either content or decorative when used in a card. The image is likely to be decorative when the card is a small preview of a full page of content, where the user can get more information. In this case, the alt text attribute should be empty, like `alt=""`. When it is content, it should have a descriptive alt text attribute.
 
 ### Linking the Card
 
-There are numerous ways to add a link to a card, and each approach has pros and cons. The most straightforward approach is to only link the card heading. Nothing more needs to be done in this case. However, many users expect the card image to also be a link, so it's best to find a way to link the image as well. For this, there are several options.
+There are numerous ways to add a link to a card, and each approach has pros and cons. The most straightforward approach is to only link the card heading or to add a call to action link. Nothing more needs to be done in these cases. However, many users expect the card image to also be a link, so it's best to find a way to link the image as well. For this, there are several options.
 
-- Expand the heading link to cover the entire card
+- Expand the heading link to cover the entire card using CSS
 - Add a second anchor tag around the image, and remove it as a tab stop
 - Use JavaScript to simulate a click on the heading link when a user clicks on the image
 
@@ -34,11 +34,11 @@ This pattern includes the first two approaches. Toggle the `linkType` attribute 
 
 In general, avoid including more than one link per card, unless the card has multiple, distinct calls to action. Linking taxonomy terms or other meta information can lead to link overload and is not a common user path.
 
-#### Approach: Expand heading link
+#### Approach: Expand the heading link
 
-With this approach, it becomes difficult for a user to highlight or select the text inside of the card, so this approach should be avoided in instances where a user might want to frequently copy some of the text.
+With this approach, it becomes difficult for a user to highlight or select the text inside of the card, so this approach should be avoided in instances where a user might want to copy some of the text.
 
-#### Approach: Second anchor tag around image
+#### Approach: Second anchor tag around the image
 
 To remove the tab stop from the anchor tag around the image, use `aria-hidden="true" tabIndex="-1"`. It should be noted that this also hides the image inside the anchor tag from screen readers, so it can no longer be considered content. In this case, it only needs an empty alt attribute. If the image is content, a different approach to linking should be considered.
 
