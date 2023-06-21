@@ -1,0 +1,54 @@
+.storybook-card {
+  border: 1px solid #efefef;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 22rem;
+  overflow: hidden;
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .card-heading {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+
+    a {
+      color: currentColor;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .card-meta {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+    order: -1;
+  }
+
+  .card-image {
+    order: -1;
+  }
+
+  &.is-link-type-card {
+    position: relative;
+
+    .card-heading a {
+      &::after {
+        bottom: 0;
+        content: '';
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+}
