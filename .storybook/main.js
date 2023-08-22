@@ -5,6 +5,7 @@ module.exports = {
     '../src/**/*.stories.mdx',
     '../src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
+
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -12,14 +13,21 @@ module.exports = {
     'storybook-addon-turbo-build',
     '@storybook/preset-scss',
     '@storybook/addon-a11y',
+    '@storybook/addon-docs',
   ],
-  framework: '@storybook/react',
+
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {},
+  },
+
   core: {
-    builder: 'webpack5',
+    disableTelemetry: true,
     options: {
       lazyCompilation: true,
     },
   },
+
   webpackFinal: async (config) => {
     // Hook up aliases.
     // eslint-disable-next-line no-param-reassign
@@ -29,5 +37,9 @@ module.exports = {
 
     // Return the altered config
     return config;
+  },
+
+  docs: {
+    autodocs: true,
   },
 };
