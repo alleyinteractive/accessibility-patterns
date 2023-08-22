@@ -1,12 +1,12 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs';
+{ /* Card.mdx */ }
 
-import Card from './Card';
+import { Canvas, Meta, Title } from '@storybook/blocks';
 
-<Meta title="Components/Card" component={Card} />
+import * as CardStories from './Card.stories';
 
-export const Template = (args) => <Card {...args} />;
+<Meta of={CardStories} />
 
-# Card
+<Title />
 
 A card is a pairing of a heading and related content. Without the visual display of a card, the heading and content should still make sense as a group.
 
@@ -46,18 +46,6 @@ For more about linking cards, see [this Inclusive Commponents page](https://incl
 
 ## Example
 
-<Canvas>
-  <Story
-    name="Card"
-    args={{
-      heading: 'Card Heading',
-      headingLevel: 2,
-	  category: 'Card Category',
-      content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis vestibulum ex, ut hendrerit massa pharetra ut. Nunc et lacinia nulla, sollicitudin laoreet quam. Sed sodales ex ligula. Mauris in sagittis mauris. Morbi ac dapibus leo, non suscipit tellus. Nam ornare fermentum odio, vel lacinia arcu.</p>',
-	  linkType: 'default',
-    }}>
-    {Template.bind({})}
-  </Story>
-</Canvas>
+<Canvas of={CardStories.Default} />
 
 _Image from [unsplash.com/photos/WTPp4wgourk](https://unsplash.com/photos/WTPp4wgourk)._
