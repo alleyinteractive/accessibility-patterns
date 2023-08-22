@@ -1,10 +1,10 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs';
+{ /* Breadcrumb.mdx */ }
 
-import Breadcrumb from './Breadcrumb'
+import { Canvas, Meta } from '@storybook/blocks';
 
-<Meta title="Components/Breadcrumb" component={Breadcrumb} />
+import * as BreadcrumbStories from './Breadcrumb.stories';
 
-export const Template = (args) => <Breadcrumb {...args} />;
+<Meta of={BreadcrumbStories} />
 
 # Breadcrumb
 
@@ -18,25 +18,4 @@ A "breadcrumb trail" consists of a list of links to the parent pages of the curr
 
 ## Example
 
-<Canvas>
-	<Story
-		name="Breadcrumb"
-		args={{
-			items: [
-				{
-					title: 'Home',
-					url: '#'
-				},
-				{
-					title: 'Category',
-					url: '#'
-				},
-				{
-					title: 'Current Page',
-					url: '#'
-				}
-			]
-		}}>
-		{Template.bind({})}
-	</Story>
-</Canvas>
+<Canvas of={BreadcrumbStories.Default} />

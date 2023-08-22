@@ -5,7 +5,8 @@ To contribute to the Accessibility Patterns Library:
 1. Clone the Jira ticket [ACCESS-14](https://alleyinteractive.atlassian.net/browse/ACCESS-14) for your new pattern (optional).
 1. Create a new feature branch based off of `main` that follows our branch naming conventions.
 1. Create a new component for your pattern in the `src/components` directory. Test the component to ensure it meets WCAG AA standards (see [Testing](#testing)).
-1. Create a story for the new component that documents this pattern, including but not limited to the following sections:
+1. Create a story (MyComponent.stories.jsx) for the new component that illustrates this pattern and any variations.
+1. Create documentation (MyComponent.mdx) for the new component, including but not limited to the following sections:
     - **Title**: Pattern title, along with other names that may be used.
     - **Summary**: An overview of what the pattern is and how it is commonly used.
     - **Best Practices**: Some *DOs* and *DON'Ts* when implementing this pattern.
