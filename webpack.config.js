@@ -14,11 +14,12 @@ module.exports = (env, { mode }) => {
       rules: [
         {
           exclude: /node_modules/,
-          test: /.jsx?$/,
+          test: /\.(jsx?|tsx?)$/,
           use: {
             loader: 'babel-loader',
             options: {
               cacheDirectory: true,
+              presets: [['react-app', { flow: false, typescript: true }]],
             },
           },
         },

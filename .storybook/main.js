@@ -6,6 +6,10 @@ module.exports = {
     '../src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
 
+  typescript: {
+    check: true,
+  },
+
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',

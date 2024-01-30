@@ -1,7 +1,11 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-function App() {
+interface AppProps {
+  tab: string;
+}
+
+function App({ tab }: AppProps) {
   return (
     <>
       <h1>Accessibility Patterns</h1>
@@ -11,5 +15,8 @@ function App() {
   );
 }
 
-const root = createRoot(document.getElementById('app'));
-root.render(<App tab="home" />);
+const app = document.getElementById('app');
+if (app) {
+  const root = createRoot(app);
+  root.render(<App tab="home" />);
+}
