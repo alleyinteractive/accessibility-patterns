@@ -1,0 +1,27 @@
+{ /* HamburgerMenu.mdx */ }
+
+import { Canvas, Meta, Title } from '@storybook/blocks';
+
+import * as HamburgerMenuStories from './HamburgerMenu.stories';
+
+<Meta of={HamburgerMenuStories} />
+
+<Title />
+
+A "hamburger menu" uses a menu button is a button that opens a menu. It is often styled as a typical push button with a downward pointing arrow or triangle to hint that activating the button will display a menu. [Source](https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/)
+
+## Best Practices
+- Use `<nav>` element to wrap the hamburger button and the menu.
+- Include `aria-label` attribute on the `<nav>` element with the value being the name of the corresponding menu.
+- Use `<button>` for the hamburger menu button.
+- Apply `aria-expanded` to the hamburger menu button and set it dynamically based on the status of the menu.
+    - `aria-expanded="true"` when the menu is expanded
+    - `aria-expanded="false"` when the menu is collapsed
+- Menu can be expanded or collapsed using the mouse by clicking the hamburger menu button.
+- Menu can be expanded or collapsed using the keyboard by pressing `Enter` or `Spacebar` when the hamburger button is the focus.
+- Menu can be collapsed using the keyboard by pressing `Esc` while on any menu item. Additionally, the focus should move to the hamburger menu button.
+- Use `aria-controls` to associate the hamburger menu button to the menu it controls.
+
+## Example
+
+<Canvas of={HamburgerMenuStories.Default} />
