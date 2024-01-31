@@ -4,8 +4,8 @@
   "description": "A library of accessible web components and patterns.",
   "main": "index.js",
   "engines": {
-    "node": "18",
-    "npm": "9"
+    "node": "20",
+    "npm": "10"
   },
   "scripts": {
     "prebuild": "check-node-version --package",
