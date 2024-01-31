@@ -1,0 +1,12 @@
+.hamburger-menu-button {
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+  padding-block: 5px;
+  padding-inline: 5px;
+}
+
+// stylelint-disable-next-line selector-max-specificity
+.hamburger-menu-button[aria-expanded='false'] + .hamburger-menu {
+  display: none;
+}
