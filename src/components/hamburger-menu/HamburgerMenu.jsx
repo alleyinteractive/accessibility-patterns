@@ -31,10 +31,15 @@ const HamburgerMenu = ({
   };
 
   // Opens the menu and adds menu event listener.
-  const openMenu = () => {
+  const openMenu = (focus = 'first') => {
     setIsOpen(true);
     // eslint-disable-next-line no-use-before-define
     mainMenuRef.current.addEventListener('keydown', handleMenuItemKeyDown);
+    if (focus === 'first') {
+      firstMenuItemRef.current.focus();
+    } else if (focus === 'last') {
+      lastMenuItemRef.current.focus();
+    }
   };
 
   // Toggles menu open/closed when user clicks menu button.
@@ -64,12 +69,10 @@ const HamburgerMenu = ({
       case 'ArrowDown':
         event.preventDefault();
         openMenu();
-        firstMenuItemRef.current.focus();
         break;
       case 'ArrowUp':
         event.preventDefault();
-        openMenu();
-        lastMenuItemRef.current.focus();
+        openMenu('last');
         break;
       default:
         break;
@@ -150,6 +153,7 @@ const HamburgerMenu = ({
         onClick={handleMenuToggle}
         ref={hamburgerMenuButtonRef}
       >
+        <span className="hamburger-icon" />
         Menu
       </button>
       <ul
@@ -166,6 +170,7 @@ const HamburgerMenu = ({
           >
             <a
               role="menuitem"
+              tabIndex="-1"
               href={url}
             >
               {title}

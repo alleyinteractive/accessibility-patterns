@@ -8,9 +8,11 @@ import * as HamburgerMenuStories from './HamburgerMenu.stories';
 
 <Title />
 
-A "hamburger menu" uses a menu button is a button that opens a menu. It is often styled as a typical push button with a downward pointing arrow or triangle to hint that activating the button will display a menu. [Source](https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/)
+A "hamburger menu" uses a button that opens a menu. It is often styled as a typical push button with a hamburger icon (three horizontal lines), downward pointing arrow, or triangle to hint that activating the button will display a menu.
 
 ## Best Practices
+- [Menu Button](https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/)
+- [Menu Button Links](https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/examples/menu-button-links/)
 - Markup
     - Use `<nav>` element to wrap the hamburger button and the menu.
     - Include `aria-label` attribute on the `<nav>` element with the value being the name of the corresponding menu.
@@ -21,7 +23,7 @@ A "hamburger menu" uses a menu button is a button that opens a menu. It is often
     - Use `aria-controls` to associate the hamburger menu button to the menu it controls.
 - Keyboard Support
     - Hamburger Menu Button
-        - Pressing `Enter` or `Space` on the hamburger menu button toggles the menu open/closed.
+        - Pressing `Enter` or `Space` on the hamburger menu button toggles the menu open/closed and focuses the first menu item.
         - Pressing `ArrowDown` on the hamburger menu button opens the menu and focuses the first menu item.
         - Pressing `ArrowUp` on the hamburger menu button opens the menu and focuses on the last menu item.
     - Menu Items
