@@ -1,0 +1,41 @@
+{ /* HamburgerMenu.mdx */ }
+
+import { Canvas, Meta, Title } from '@storybook/blocks';
+
+import * as HamburgerMenuStories from './HamburgerMenu.stories';
+
+<Meta of={HamburgerMenuStories} />
+
+<Title />
+
+A "hamburger menu" uses a button that opens a menu. It is often styled as a typical push button with a hamburger icon (three horizontal lines), downward pointing arrow, or triangle to hint that activating the button will display a menu.
+
+## Best Practices
+- [Menu Button](https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/)
+- [Menu Button Links](https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/examples/menu-button-links/)
+- Markup
+    - Use `<nav>` element to wrap the hamburger button and the menu.
+    - Include `aria-label` attribute on the `<nav>` element with the value being the name of the corresponding menu.
+    - Use `<button>` for the hamburger menu button.
+    - Apply `aria-expanded` to the hamburger menu button and set it dynamically based on the status of the menu.
+        - `aria-expanded="true"` when the menu is expanded
+        - `aria-expanded="false"` when the menu is collapsed
+    - Use `aria-controls` to associate the hamburger menu button to the menu it controls.
+- Keyboard Support
+    - Hamburger Menu Button
+        - Pressing `Enter` or `Space` on the hamburger menu button toggles the menu open/closed and focuses the first menu item.
+        - Pressing `ArrowDown` on the hamburger menu button opens the menu and focuses the first menu item.
+        - Pressing `ArrowUp` on the hamburger menu button opens the menu and focuses on the last menu item.
+    - Menu Items
+        - Pressing `ArrowDown` on a menu item changes focus to the next menu item. Focus moves to the first menu item when the end is reached.
+        - Pressing `ArrowUp` on a menu item changes focus to the previous menu item. Focus moves to the last menu item when the beginning is reached.
+        - Pressing `Home` on a menu item changes focus to the first menu item.
+        - Pressing `End` on a menu item changes focus to the last menu item.
+    - General
+        - Pressing `Escape` or `Tab` with the menu open closes the menu.
+- Mouse Support
+    - Clicking the hamburger menu button toggles the menu open/closed.
+
+## Example
+
+<Canvas of={HamburgerMenuStories.Default} />
