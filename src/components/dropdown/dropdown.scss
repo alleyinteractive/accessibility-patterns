@@ -1,0 +1,32 @@
+select {
+  appearance: none;
+  background: url('../../assets/accordion-chevron.svg') no-repeat;
+  background-position: bottom 1rem right 0.75rem;
+  border: 2px solid;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: block;
+  font-size: 1rem;
+  justify-self: start;
+  margin: 0 0 1rem;
+  padding: 0.75rem 3.5rem 0.75rem 0.5rem;
+  transition: 0.2s;
+
+  &:active,
+  &:focus,
+  &:focus-visible,
+  &:hover {
+    border: 0.125rem solid darken(#000, 50);
+    box-shadow: 0 0 4px 1px rgba(#000, 0.2);
+  }
+
+  option {
+    font-weight: normal;
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    color: #333;
+    cursor: default;
+  }
+}
