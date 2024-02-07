@@ -7,8 +7,8 @@ export default {
 
 export const Default = {
   args: {
-    label: 'Select a number',
-    defaultItem: { value: '', text: 'Select' },
+    label: 'Number selector',
+    defaultItem: { value: '', text: 'Select an option' },
     content: [
       { value: '1', text: 'One' },
       { value: '2', text: 'Two' },
