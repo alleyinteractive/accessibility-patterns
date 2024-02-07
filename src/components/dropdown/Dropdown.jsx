@@ -9,23 +9,19 @@ const Dropdown = ({
   content,
   label,
   defaultItem,
-}) => {
-  const containerClass = '';
-
-  return (
-    <div className={['storybook-dropdown', containerClass].join(' ')}>
-      <label htmlFor="dropdown-list">
-        {label}
-      </label>
-      <select id="dropdown-list" name="dropdown-list">
-        <option value={defaultItem.value} selected disabled>{defaultItem.text}</option>
-        {content.map(({ value, text }) => (
-          <option value={value}>{text}</option>
-        ))}
-      </select>
-    </div>
-  );
-};
+}) => (
+  <div className="storybook-dropdown">
+    <label htmlFor="dropdown-list">
+      {label}
+    </label>
+    <select id="dropdown-list" name="dropdown-list">
+      <option value={defaultItem.value} selected disabled>{defaultItem.text}</option>
+      {content.map(({ value, text }) => (
+        <option value={value}>{text}</option>
+      ))}
+    </select>
+  </div>
+);
 
 Dropdown.propTypes = {
   label: PropTypes.string.isRequired,
