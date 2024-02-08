@@ -1,42 +1,44 @@
 .storybook-dropdown {
-  position: absolute;
+  &__select-wrapper {
+    position: relative;
+    width: fit-content;
 
-  select {
-    appearance: none;
-    border: 1px solid #999;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    display: block;
-    font-size: 1rem;
-    justify-self: start;
-    margin: 0;
-    padding: 0.75rem 3.5rem 0.75rem 0.5rem;
-    transition: 0.2s;
-
-    &:active,
-    &:focus,
-    &:focus-visible,
-    &:hover {
-      outline: 2px solid #007bff;
+    select {
+      appearance: none;
+      border: 1px solid #999;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      display: block;
+      font-size: 1rem;
+      justify-self: start;
+      margin: 0;
+      padding: 0.75rem 3.5rem 0.75rem 0.5rem;
+      transition: 0.2s;
+  
+      &:active,
+      &:focus,
+      &:focus-visible,
+      &:hover {
+        outline: 2px solid #007bff;
+      }
+  
+      option {
+        font-weight: normal;
+      }
+  
+      &:disabled,
+      &[aria-disabled='true'] {
+        color: #333;
+        cursor: default;
+      }
     }
-
-    option {
-      font-weight: normal;
+  
+    &::after {
+      content: '\23F7';
+      pointer-events: none;
+      position: absolute;
+      right: 10px;
+      top: 33%;
     }
-
-    &:disabled,
-    &[aria-disabled='true'] {
-      color: #333;
-      cursor: default;
-    }
-  }
-
-  &::after {
-    content: '\23F7';
-    pointer-events: none;
-    position: absolute;
-    right: 10px;
-    top: 65%;
-    transform: translateY(-55%);
   }
 }

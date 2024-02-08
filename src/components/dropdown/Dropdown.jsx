@@ -14,12 +14,14 @@ const Dropdown = ({
     <label htmlFor="dropdown-list">
       {label}
     </label>
-    <select id="dropdown-list" name="dropdown-list">
-      <option value={defaultItem.value} selected disabled>{defaultItem.text}</option>
-      {content.map(({ value, text }) => (
-        <option value={value}>{text}</option>
-      ))}
-    </select>
+    <div className="storybook-dropdown__select-wrapper">
+      <select id="dropdown-list" name="dropdown-list">
+        <option value={defaultItem.value} selected disabled>{defaultItem.text}</option>
+        {content.map(({ value, text }) => (
+          <option value={value}>{text}</option>
+        ))}
+      </select>
+    </div>
   </div>
 );
 
