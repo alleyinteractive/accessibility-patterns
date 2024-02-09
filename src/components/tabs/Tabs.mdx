@@ -1,0 +1,48 @@
+{ /* Tabs.mdx */ }
+
+import { Canvas, Meta, Title } from '@storybook/blocks';
+
+import * as TabsStories from './Tabs.stories';
+
+<Meta of={TabsStories} />
+
+<Title />
+
+Tabs are a set of layered sections of content, known as tab panels, that display one panel of content at a time. Each tab panel has an associated tab element, that when activated, displays the panel. The list of tab elements is arranged along one edge of the currently displayed panel, most commonly the top edge. [Source](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/)
+
+This demo includes tab lists with automatic and manual activation as well as horizontal and vertical orientations.
+
+## Best Practices
+
+### Keyboard Interaction
+
+Keyboard interaction can use either Automatic Activation or Manual Activation. Automatic Activation is only recommended if the panels can be displayed instantly, i.e., all panel content is present in the DOM.
+
+- When the `tablist` is the next element in the page sequence, `Tab` moves the focus into `tablist` and onto the active tab element
+- When in the `tablist`, `Tab` moves the focus to the next element in the page tab sequence outside of the `tablist`, typically the `tabpanel`
+- When focus is on a tab element in a tab list:
+    - `Left Arrow` or `Up Arrow` moves the focus to the previous tab, or the last tab if there is no previous tab (depending on horizontal or vertical `tablist` orientation)
+    - `Right Arrow` or `Down Arrow` moves the focus to the next tab, or the first tab if there is no next tab (depending on horizontal or vertical `tablist` orientation)
+    - `Home` moves the focus to the first tab (optional)
+    - `End` moves the focus to the last tab (optional)
+    - `Shift + F10` opens the associated popup menu, if applicable
+
+#### Automatic Activation
+It is recommended that tabs activate automatically when they receive focus as long as their associated tab panels are displayed without noticeable latency.
+
+#### Manual Activation
+`Space` or `Enter` is required to activate the tab that is focused.
+
+### ARIA Roles, States, and Properties
+- `role="tablist"`: the container for the tabs
+    - Should use `aria-labelledby` or `aria-label` to indicate the lable for the `tablist`
+    - Should have property `aria-orientation` set to `vertical` if the tabs are vertical (default setting is `horizontal`)
+- `role="tab"`: each tab element, should be within the `tablist`
+    - Should have `aria-controls` property referring to the associated `tabpanel`
+    - Should have `aria-selected` set to `true` for the active tab and all others set to `false`
+- `role="tabpanel"`: each content panel for a tab
+    - Should use `aria-labelledby` to refer to the associated `tab`
+
+## Example
+
+<Canvas of={TabsStories.Default} />
