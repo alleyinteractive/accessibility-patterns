@@ -1,0 +1,29 @@
+{ /* Dropdown.mdx */ }
+
+import { Canvas, Meta, Title } from '@storybook/blocks';
+
+import * as DropdownStories from './Dropdown.stories';
+
+<Meta of={DropdownStories} />
+
+<Title />
+
+A dropdown menu is a graphical control element that allows users to select one option from a list of predefined choices.
+
+## Best Practices
+
+### Semantic HTML
+
+No need to reinvent the wheel. Use a `<select>` element for the dropdown menu. This element is well-supported by assistive technologies and is familiar to users. Custom CSS options run the risk of undoing some of these visual and functional indicators.
+
+### Descriptive Labels
+
+Always use the `<label>` element to associate a label with the `<select>` element. This helps screen readers and other assistive technologies to correctly identify and describe the purpose of the dropdown.
+
+### Sensible Defaults
+
+Include a default, non-selectable option (e.g., "Select an option") as the first `<option>` element with an empty value attribute. This ensures that users know the purpose of the dropdown and prompts them to make a selection.
+
+## Example
+
+<Canvas of={DropdownStories.Default} />
