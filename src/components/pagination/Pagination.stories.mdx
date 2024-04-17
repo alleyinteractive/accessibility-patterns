@@ -1,0 +1,52 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Pagination from './Pagination'
+
+<Meta title="Components/Pagination" component={Pagination} />
+
+export const Template = (args) => <Pagination {...args} />;
+
+# Pagination
+
+Pagination is a list of links on a website that are used to navigate through multiple pages of content, allowing users to access different sections or subsets of data.
+
+## Best Practices
+- Use `<nav>` element in addition to `aria-label="pagination"` to differentiate from site navigation.
+- Use `<ol>` element to represent the pagination list in ascending order.
+- Use `aria-current="page"` for the pagination link that indicates the current page.
+- Use `aria-label="page <page number>` on the current page for additional context.
+- Use a visually hidden `<span>` containing text indicating the current page for screen readers.
+- Use `aria-hidden="true"` on any disabled links.
+
+## Example
+
+<Canvas>
+	<Story
+		name="Pagination"
+		args={{
+			urls: [
+				{
+					url: '/page1',
+					pageNumber: 1
+				},
+				{
+					url: '/page2',
+					pageNumber: 2
+				},
+				{
+					url: '/page3',
+					pageNumber: 3
+				},
+				{
+					url: '/page4',
+					pageNumber: 4
+				},
+				{
+					url: '/page5',
+					pageNumber: 5
+				}
+			]
+		}}>
+		{Template.bind({})}
+	</Story>
+</Canvas>
