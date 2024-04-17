@@ -1,4 +1,4 @@
-import type { StorybookConfig } from '@storybook/react/types';
+import type { StorybookConfig } from '@storybook/react-webpack5';
 const path = require('path');
 
 const config: StorybookConfig = {
@@ -24,7 +24,7 @@ const config: StorybookConfig = {
 
 	core: {
 		disableTelemetry: true,
-		builder: 'webpack5',
+		builder: '@storybook/builder-webpack5',
 	},
 
 	typescript: {
