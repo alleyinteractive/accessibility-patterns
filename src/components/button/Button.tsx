@@ -10,7 +10,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({ primary }) => {
 	return (
 		<button style={{ backgroundColor: primary ? '#e55842' : 'gray' }}>
-		Click me
+			Click Me
 		</button>
 	);
 };

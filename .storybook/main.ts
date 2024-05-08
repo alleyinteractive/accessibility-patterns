@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
+import { Configuration } from 'webpack';
 const path = require('path');
 
 const config: StorybookConfig = {
@@ -18,8 +19,8 @@ const config: StorybookConfig = {
 	],
 
 	framework: {
-	name: '@storybook/react-webpack5',
-	options: {},
+		name: '@storybook/react-webpack5',
+		options: {},
 	},
 
 	core: {
@@ -34,9 +35,8 @@ const config: StorybookConfig = {
 		reactDocgenTypescriptOptions: {},
 	},
 
-	webpackFinal: async (config) => {
+	webpackFinal: async (config: Configuration) => {
 		// Hook up aliases.
-		// eslint-disable-next-line no-param-reassign
 		if (config.resolve) {
 			config.resolve.alias = {
 				'@': path.resolve(__dirname, '../src'),
