@@ -8,13 +8,13 @@ const config: StorybookConfig = {
 	  ],
 
 	addons: [
-	'@storybook/addon-links',
-	'@storybook/addon-essentials',
-	'@storybook/addon-interactions',
-	'storybook-addon-turbo-build',
-	'@storybook/preset-scss',
-	'@storybook/addon-a11y',
-	'@storybook/addon-docs',
+		'@storybook/addon-links',
+		'@storybook/addon-essentials',
+		'@storybook/addon-interactions',
+		'storybook-addon-turbo-build',
+		'@storybook/preset-scss',
+		'@storybook/addon-a11y',
+		'@storybook/addon-docs',
 	],
 
 	framework: {
