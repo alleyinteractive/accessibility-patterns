@@ -28,7 +28,6 @@ jobs:
         with:
           node-version: '20'
           cache-node-modules: true
-          skip-audit: true # Failing as of 2024-09-09
           test-command: |
             npm run lint &&
             npm run stylelint
