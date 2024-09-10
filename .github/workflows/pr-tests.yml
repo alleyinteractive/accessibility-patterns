@@ -1,0 +1,35 @@
+name: "PR Tests"
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  pull-request-tests:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
+      cancel-in-progress: true # Cancel any in-progress runs.
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+        timeout-minutes: 1
+
+      # Check for conflict markers, etc.
+      - name: Run General Tests
+        uses: alleyinteractive/action-test-general@develop
+
+      - name: Node tests
+        uses: alleyinteractive/action-test-node@develop
+        with:
+          node-version: '20'
+          cache-node-modules: true
+          test-command: |
+            npm run lint &&
+            npm run stylelint
+          build-command: |
+            npm run build-storybook
