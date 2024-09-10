@@ -79,4 +79,4 @@ If your project requires, depends, extends, or competes with alternate projects 
 
 ## License
 
-If licensed or copyrighted, indicate that here with a link to the license or copyright.
+GNU General Public License v2.0
