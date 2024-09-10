@@ -1,7 +1,7 @@
 # Accessibility Patterns
 A library of accessible web components and patterns.
 
-[:point_right: View Library](https://main--635823548f5047fa4bb4ee22.chromatic.com)
+[:point_right: View Library](https://alleyinteractive.github.io/accessibility-patterns/)
 ## Table of Contents
 
 - [Background](#background)
@@ -19,12 +19,12 @@ A library of accessible web components and patterns.
 
 ## Background
 
-The Accessible Pattern Library is a component-based collection of patterns and documentation that is meant to serve as a guide to developers when building interactive components. The library uses [Storybook](https://storybook.js.org/), and is hosted with [Chromatic](https://www.chromatic.com/). 
+The Accessible Pattern Library is a component-based collection of patterns and documentation that is meant to serve as a guide to developers when building interactive components. The library uses [Storybook](https://storybook.js.org/), and is hosted on [GitHub Pages](https://alleyinteractive.github.io/accessibility-patterns/). 
 
 
 ## Environments
 
-[Main](https://main--635823548f5047fa4bb4ee22.chromatic.com)
+[Main](https://alleyinteractive.github.io/accessibility-patterns/)
 
 
 ## Installation
@@ -49,7 +49,7 @@ To contribute to this project, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Deployment
 
-Once a PR is merged into `main`, Buddy will kick off a deployment to Chromatic. Changes will be visible after deployment completes successfully.
+Once a PR is merged into `main`, GitHub Actions will kick off a deployment to GitHub Pages. Changes will be visible after deployment completes successfully.
 
 ## Project Structure
 
