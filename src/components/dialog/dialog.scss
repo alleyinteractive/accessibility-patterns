@@ -13,13 +13,14 @@
     background: #fff;
     box-shadow: 0 19px 38px rgb(0 0 0 / 12%), 0 15px 12px rgb(0 0 0 / 22%);
     display: none;
-    left: 50vw;
+    left: 50%;
     min-height: auto;
     min-width: 640px;
     padding: 2rem;
     position: absolute;
     top: 2rem;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
 
     &.open {
       display: block;
