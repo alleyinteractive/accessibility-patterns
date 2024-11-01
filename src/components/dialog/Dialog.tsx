@@ -24,7 +24,7 @@ const Dialog: React.FC = () => {
 	return (
 		<div className={`dialog__backdrop ${isOpen ? 'active' : ''}`}>
 			<div
-			className='dialog'
+				className='dialog'
 				role='dialog'
 				aria-modal='true'
 				aria-labelledby='dialog-example-label'
