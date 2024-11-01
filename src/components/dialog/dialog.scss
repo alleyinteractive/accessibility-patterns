@@ -1,0 +1,52 @@
+.dialog {
+  &__backdrop {
+    height: 100vh;
+    padding: 2rem;
+    width: 100%;
+
+    &.active {
+      background: rgb(0 0 0 / 30%);
+    }
+  }
+
+  &__popup {
+    background: #fff;
+    box-shadow: 0 19px 38px rgb(0 0 0 / 12%), 0 15px 12px rgb(0 0 0 / 22%);
+    display: none;
+    left: 50%;
+    min-height: auto;
+    min-width: 640px;
+    padding: 2rem;
+    position: absolute;
+    top: 2rem;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    &.open {
+      display: block;
+    }
+  }
+
+  &__close {
+    color: #000;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__content {
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  button {
+    background: #029cfd;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 1rem;
+  }
+}
